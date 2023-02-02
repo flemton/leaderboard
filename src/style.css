@@ -1,0 +1,63 @@
+body {
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.content {
+  justify-content: space-evenly;
+}
+
+.scores-section {
+  flex-direction: column;
+  margin: 12px;
+}
+
+.recent-scores {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recent-scores button {
+  height: auto;
+}
+
+.scores {
+  box-sizing: border-box;
+  border: 2px solid black;
+  list-style: none;
+  padding: 0;
+  width: 200px;
+}
+
+.scores li {
+  padding: 2px 8px;
+}
+
+.add-form {
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-score {
+  margin: 28px;
+  letter-spacing: 2px;
+}
+
+.score-form {
+  flex-direction: column;
+}
+
+.score-form input {
+  margin: 10px;
+}
+
+#submit {
+  width: fit-content;
+  position: relative;
+  left: 90px;
+}

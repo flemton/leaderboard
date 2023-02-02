@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
 </head>
-<body>
+
+<body class="flexbox">
+    <h1>Leaderboard</h1>
+    <section class="content flexbox">
+        <section class="scores-section flexbox">
+            <span class="recent-scores flexbox">
+                <h3>Recent scores</h3>
+                <button>Refresh</button>
+            </span>
+            <ul class="scores">
+                <li>Name: 100</li>
+                <li>Name: 20</li>
+                <li>Name: 50</li>
+                <li>Name: 78</li>
+                <li>Name: 128</li>
+                <li>Name: 77</li>
+                <li>Name: 72</li>
+            </ul>
+        </section>
+        <section class="add-form flexbox">
+            <h3 class="add-score">Add your score</h3>
+            <form action="" class="score-form flexbox">
+                <input type="text" placeholder="Your name">
+                <input type="text" placeholder="Your score">
+                <input type="button" value="Submit" id="submit">
+            </form>
+        </section>
+    </section>
 </body>
+
 </html>
