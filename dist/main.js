@@ -9,16 +9,6 @@
  */
 (self["webpackChunkleaderboard"] = self["webpackChunkleaderboard"] || []).push([["main"],{
 
-/***/ "./modules/addScore":
-/*!**************************!*\
-  !*** ./modules/addScore ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst userName = document.querySelector('#name');\nconst userScore = document.querySelector('#score');\n\nasync function addScore() {\n    const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores/', {\n    method: 'POST',\n    body: JSON.stringify({\"user\": userName.value, \"score\": userScore })\n  });\n  console.log(response.json);\n  return response.json;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n//# sourceURL=webpack://leaderboard/./modules/addScore?");
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -125,7 +115,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_addScore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/addScore */ \"./modules/addScore\");\n\n\n\nconst userScore = document.querySelector('#score');\n\nfunction test() {\n    console.log(userScore.value);\n}\nconst submitBtn  = document.querySelector('#submit');\nsubmitBtn.addEventListener('submit', test);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_addScore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/addScore */ \"./src/modules/addScore\");\n/* harmony import */ var _modules_getScores__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/getScores */ \"./src/modules/getScores.js\");\n\n\n\n\nconst submitBtn  = document.querySelector('#submit');\nsubmitBtn.addEventListener('click', _modules_addScore__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\nconst refresh = document.querySelector('#refresh');\nrefresh.addEventListener('click', _modules_getScores__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/addScore":
+/*!******************************!*\
+  !*** ./src/modules/addScore ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst userName = document.querySelector('#name');\nconst userScore = document.querySelector('#score');\n\nasync function addScore() {\n    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores/', {\n    method: 'POST',\n    body: JSON.stringify({\"user\": userName.value, \"score\": userScore })\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n//# sourceURL=webpack://leaderboard/./src/modules/addScore?");
+
+/***/ }),
+
+/***/ "./src/modules/getScores.js":
+/*!**********************************!*\
+  !*** ./src/modules/getScores.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nasync function getScores() {\n    const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores/')\n  .then(console.log(JSON.stringify(result)));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getScores);\n\n//# sourceURL=webpack://leaderboard/./src/modules/getScores.js?");
 
 /***/ })
 
