@@ -1,6 +1,6 @@
 const scoreUl = document.querySelector('.scores');
 
-async function getScores() {
+const getScores = async () => {
   const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores/');
   const resj = await res.text();
   const scores = JSON.parse(resj).result;
@@ -15,6 +15,6 @@ async function getScores() {
     i += 1;
   });
   scoreUl.innerHTML = leaders;
-}
+};
 
 export default getScores;
