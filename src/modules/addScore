@@ -4,13 +4,15 @@ const userScore = document.querySelector('#score');
 
 async function addScore() {
     let data = { user: userName.value, score: parseInt(userScore.value, 10) };
-    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores', {
+    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
     },
     body: JSON.stringify(data)
   })
+  userName.value = '';
+    userScore.value = '';
   getScores()
 }
 
