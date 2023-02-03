@@ -2,17 +2,14 @@ const scoreUl = document.querySelector('.scores');
 
 const getScores = async () => {
   const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores/');
-  const resj = await res.text();
-  const scores = JSON.parse(resj).result;
+  const scores = JSON.parse(await res.text()).result;
   let leaders = '';
-  let i = 1;
   scores.sort((a, b) => b.score - a.score);
-  scores.forEach((score) => {
+  scores.forEach((score, i) => {
     leaders
         += `<li> 
-        ${i}. ${score.user}: ${score.score}
+        ${i + 1}. ${score.user}: ${score.score}
         </li>`;
-    i += 1;
   });
   scoreUl.innerHTML = leaders;
 };
