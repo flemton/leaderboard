@@ -1,0 +1,19 @@
+import getScores from "./getScores";
+const userName = document.querySelector('#name');
+const userScore = document.querySelector('#score');
+
+const addScore = async () => {
+    const data = { user: userName.value, score: parseInt(userScore.value, 10) };
+    await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/IqNrWE04pgaXdxjtzDh9/scores', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  })
+  userName.value = '';
+    userScore.value = '';
+  getScores()
+}
+
+export default addScore;
