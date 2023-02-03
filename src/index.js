@@ -2,6 +2,8 @@ import './style.css';
 import addScore from './modules/addScore';
 import getScores from './modules/getScores';
 
+getScores();
+
 const submitBtn  = document.querySelector('#submit');
 submitBtn.addEventListener('click', addScore);
 

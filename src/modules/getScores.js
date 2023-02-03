@@ -5,13 +5,15 @@ async function getScores() {
     let resj = await res.text();
     const scores = JSON.parse(resj)['result'];
     let leaders = '';
+    let i = 1;
+    scores.sort(function(a, b) {return b.score - a.score});
     scores.forEach(score => {
         leaders +=
-        `<li>
-        ${score.user}: ${score.score}
+        `<li> 
+        ${i}. ${score.user}: ${score.score}
         </li>`
+        i += 1;
     });
-    console.log(leaders)
     scoreUl.innerHTML = leaders
 }
 
