@@ -6,8 +6,12 @@ const getScores = async () => {
   let leaders = '';
   scores.sort((a, b) => b.score - a.score);
   scores.forEach((score, i) => {
+    let odd = 'odd';
+    if (i % 2 === 0) {
+      odd = 'even';
+    } else { odd = 'odd'; }
     leaders
-        += `<li> 
+      += `<li class=${odd}> 
         ${i + 1}. ${score.user}: ${score.score}
         </li>`;
   });

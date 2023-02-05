@@ -2,6 +2,7 @@ body {
   width: 50%;
   flex-direction: column;
   justify-content: center;
+  background: rgb(228, 227, 227);
 }
 
 .flexbox {
@@ -52,8 +53,21 @@ body {
   flex-direction: column;
 }
 
+.odd {
+  background: grey;
+  color: white;
+}
+
+.even {
+  background: white;
+  color: grey;
+}
+
 .score-form input {
   margin: 10px;
+  color: grey;
+  background: white;
+  font-style: italic;
 }
 
 #submit {
