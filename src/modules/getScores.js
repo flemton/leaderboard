@@ -11,8 +11,8 @@ const getScores = async () => {
       odd = 'even';
     } else { odd = 'odd'; }
     leaders
-      += `<li class=${odd}> 
-        ${i + 1}. ${score.user}: ${score.score}
+      += `<li class='${odd} flexbox'> 
+        <p>${i + 1}.</p> <p>${score.user}:</p> <p>${score.score}</p>
         </li>`;
   });
   scoreUl.innerHTML = leaders;
