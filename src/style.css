@@ -1,7 +1,8 @@
 body {
-  width: 50%;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
+  background: rgb(228, 227, 227);
 }
 
 .flexbox {
@@ -15,6 +16,7 @@ body {
 .scores-section {
   flex-direction: column;
   margin: 12px;
+  width: 50%;
 }
 
 .recent-scores {
@@ -24,18 +26,36 @@ body {
 
 .recent-scores button {
   height: auto;
+  color: grey;
+  background: white;
+}
+
+#submit {
+  width: fit-content;
+  position: relative;
+  left: 90px;
+}
+
+#submit:hover,
+#refresh:hover {
+  background: rebeccapurple;
+}
+
+#submit:active,
+#refresh:active {
+  background: green;
 }
 
 .scores {
   box-sizing: border-box;
-  border: 2px solid black;
+  border: 2px solid grey;
   list-style: none;
   padding: 0;
-  width: 200px;
+  width: 100%;
 }
 
 .scores li {
-  padding: 2px 8px;
+  padding: 0 8px;
 }
 
 .add-form {
@@ -52,12 +72,35 @@ body {
   flex-direction: column;
 }
 
-.score-form input {
-  margin: 10px;
+.odd {
+  background: grey;
+  color: white;
 }
 
-#submit {
-  width: fit-content;
-  position: relative;
-  left: 90px;
+.even {
+  background: white;
+  color: grey;
+}
+
+.odd,
+.even {
+  justify-content: space-between;
+  margin: 0;
+}
+
+.odd:hover,
+.even:hover {
+  background: green;
+  color: skyblue;
+}
+
+p {
+  margin: 5px;
+}
+
+.score-form input {
+  margin: 10px;
+  color: grey;
+  background: white;
+  font-style: italic;
 }

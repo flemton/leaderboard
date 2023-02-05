@@ -6,9 +6,13 @@ const getScores = async () => {
   let leaders = '';
   scores.sort((a, b) => b.score - a.score);
   scores.forEach((score, i) => {
+    let odd = 'odd';
+    if (i % 2 === 0) {
+      odd = 'even';
+    } else { odd = 'odd'; }
     leaders
-        += `<li> 
-        ${i + 1}. ${score.user}: ${score.score}
+      += `<li class='${odd} flexbox'> 
+        <p>${i + 1}.</p> <p>${score.user}:</p> <p>${score.score}</p>
         </li>`;
   });
   scoreUl.innerHTML = leaders;
